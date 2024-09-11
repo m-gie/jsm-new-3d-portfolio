@@ -11,6 +11,7 @@ import Cube from "../components/Cube";
 import Rings from "../components/Rings";
 import HeroCamera from "../components/HeroCamera";
 import Button from "../components/Button";
+import Hacker2 from "../components/Hacker2";
 
 const Hero = () => {
   const isSmall = useMediaQuery({ maxWidth: 440 });
@@ -36,19 +37,24 @@ const Hero = () => {
           <Suspense fallback={<CanvasLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 20]} />
             <HeroCamera isMobile={isMobile}>
-              <HackerRoom
+              {/* <HackerRoom
                 //   scale={0.1}
+                position={sizes.deskPosition}
+                rotation={[0, -Math.PI, 0]}
+                scale={sizes.deskScale}
+              /> */}
+              <Hacker2
                 position={sizes.deskPosition}
                 rotation={[0, -Math.PI, 0]}
                 scale={sizes.deskScale}
               />
             </HeroCamera>
-            <group>
+            {/* <group>
               <Target position={sizes.targetPosition} />
               <ReactLogo position={sizes.reactLogoPosition} />
               <Cube position={sizes.cubePosition} />
               <Rings position={sizes.ringPosition} />
-            </group>
+            </group> */}
             <ambientLight intensity={1} />
             <directionalLight position={[10, 10, 10]} />
           </Suspense>
